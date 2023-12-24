@@ -1,9 +1,12 @@
 #include <iostream>
+#include <list>
 
 using namespace std;
 
 int factorial(int);
 bool factorion(int);
+list<int> factorionsLessThanN(int);
+void displayListOfFactorions(list<int>);
 
 int main(){
     int n=0;
@@ -15,6 +18,7 @@ int main(){
     else{
         cout<<" and "<<n<<" is NOT a factorion."<<endl;
     }
+    displayListOfFactorions(factorionsLessThanN(n));
     return 0;
 }
 
@@ -33,5 +37,22 @@ bool factorion(int n){
         sum+=factorial(digit);
         temp/=10;
     }
-    return sum==n;
+    return (sum==n && n!=0);
+}
+
+list<int> factorionsLessThanN(int n){
+    list<int> listOfFactorions;
+    for(int i=0; i<n; i++){
+        if(factorion(i)){
+            listOfFactorions.push_back(i);
+        }
+    }
+    return listOfFactorions;
+}
+
+void displayListOfFactorions(list<int> l){
+    for(list<int>::iterator it = l.begin(); it!=l.end(); it++){
+        cout<<*it<<" ";
+    }
+    cout<<endl;
 }
