@@ -7,3 +7,5 @@ I added more contents. WOW!
 #New content
 
 I want to create a branch then commit it to main. Let's see how it does. 
+
+This is an additional text in the readme file
