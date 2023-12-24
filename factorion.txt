@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+int factorial(int);
+bool factorion(int);
+
+int main(){
+    int n=0;
+    cin>>n;
+    cout<<"The factorial of "<<n<<" is "<<factorial(n);
+    if(factorion(n)){
+        cout<<" and "<<n<<" is a factorion."<<endl;
+    }
+    cout<<" and "<<n<<" is NOT a factorion."<<endl;
+    return 0;
+}
+
+int factorial(int n){
+    if(n==0){
+        return 1;
+    }else{a
+        return n * factorial(n-1);
+    }
+}
+
+bool factorion(int n){
+    int temp=n, sum=0;
+    while(temp!=0){
+        int digit = temp%10;
+        sum+=factorial(digit);
+        temp/=10;
+    }
+    return sum==n;
+}
