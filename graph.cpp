@@ -20,3 +20,9 @@ public:
     list<int> out_edge(int);
     list<int> in_edge(int);
 };
+
+int main(){
+    cout<<"This is graph.cpp"<<endl;
+    return 0;
+}
+
